@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.1.1 (Python 3.7.2 on win32)" generated="20190607 12:49:08.775" rpa="false">
+<robot generator="Robot 3.1.1 (Python 3.7.2 on win32)" generated="20190607 16:20:37.075" rpa="false">
 <suite id="s1" name="Get request specific student" source="D:\Git\github\Rest_API_Testing_using_Robot_Framework\Rest_API_Testing_using_Robot_Framework\Get_request\Tests\Get_request_specific_student.robot">
 <test id="s1-t1" name="Get request for specific student">
 <kw name="Create Session" library="RequestsLibrary">
@@ -8,42 +8,121 @@
 <arg>fetch_data</arg>
 <arg>${base_url}</arg>
 </arguments>
-<msg timestamp="20190607 12:49:08.950" level="INFO">Creating Session using : alias=fetch_data, url=http://thetestingworldapi.com/, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20190607 12:49:08.949" endtime="20190607 12:49:08.950"></status>
+<msg timestamp="20190607 16:20:37.389" level="INFO">Creating Session using : alias=fetch_data, url=https://reqres.in, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20190607 16:20:37.388" endtime="20190607 16:20:37.389"></status>
 </kw>
 <kw name="Get Request" library="RequestsLibrary">
 <doc>Send a GET request on the session object found using the
 given `alias`</doc>
 <arguments>
 <arg>fetch_data</arg>
-<arg>${uri}${student_id}</arg>
+<arg>${uri}</arg>
 </arguments>
 <assign>
 <var>${response}</var>
 </assign>
-<msg timestamp="20190607 12:49:11.116" level="INFO">Get Request using : alias=fetch_data, uri=api/studentsDetails/28, headers=None json=None</msg>
-<msg timestamp="20190607 12:49:11.116" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20190607 12:49:08.950" endtime="20190607 12:49:11.116"></status>
+<msg timestamp="20190607 16:20:37.501" level="INFO">Get Request using : alias=fetch_data, uri=/api/users?page=2, headers=None json=None</msg>
+<msg timestamp="20190607 16:20:37.501" level="INFO">c:\users\mikaelbeat\appdata\local\programs\python\python37-32\lib\site-packages\urllib3\connectionpool.py:847: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)</msg>
+<msg timestamp="20190607 16:20:37.501" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20190607 16:20:37.389" endtime="20190607 16:20:37.501"></status>
 </kw>
 <kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
 <arg>${response.status_code}</arg>
 </arguments>
-<msg timestamp="20190607 12:49:11.117" level="INFO">200</msg>
-<status status="PASS" starttime="20190607 12:49:11.116" endtime="20190607 12:49:11.117"></status>
+<msg timestamp="20190607 16:20:37.502" level="INFO">200</msg>
+<status status="PASS" starttime="20190607 16:20:37.501" endtime="20190607 16:20:37.502"></status>
 </kw>
 <kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
 <arg>${response.content}</arg>
 </arguments>
-<msg timestamp="20190607 12:49:11.117" level="INFO">{"status":"false","msg":"No data Found"}</msg>
-<status status="PASS" starttime="20190607 12:49:11.117" endtime="20190607 12:49:11.117"></status>
+<msg timestamp="20190607 16:20:37.502" level="INFO">{"page":2,"per_page":3,"total":12,"total_pages":4,"data":[{"id":4,"email":"eve.holt@reqres.in","first_name":"Eve","last_name":"Holt","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg"},{"id":5,"email":"charles.morris@reqres.in","first_name":"Charles","last_name":"Morris","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"},{"id":6,"email":"tracey.ramos@reqres.in","first_name":"Tracey","last_name":"Ramos","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"}]}</msg>
+<status status="PASS" starttime="20190607 16:20:37.502" endtime="20190607 16:20:37.502"></status>
 </kw>
-<status status="PASS" starttime="20190607 12:49:08.949" endtime="20190607 12:49:11.118" critical="yes"></status>
+<kw name="To Json" library="RequestsLibrary">
+<doc>Convert a string to a JSON object</doc>
+<arguments>
+<arg>${response.content}</arg>
+</arguments>
+<assign>
+<var>${json_response}</var>
+</assign>
+<msg timestamp="20190607 16:20:37.503" level="INFO">To JSON using : content={"page":2,"per_page":3,"total":12,"total_pages":4,"data":[{"id":4,"email":"eve.holt@reqres.in","first_name":"Eve","last_name":"Holt","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg"},{"id":5,"email":"charles.morris@reqres.in","first_name":"Charles","last_name":"Morris","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"},{"id":6,"email":"tracey.ramos@reqres.in","first_name":"Tracey","last_name":"Ramos","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"}]} </msg>
+<msg timestamp="20190607 16:20:37.503" level="INFO">To JSON using : pretty_print=False </msg>
+<msg timestamp="20190607 16:20:37.503" level="INFO">${json_response} = {'page': 2, 'per_page': 3, 'total': 12, 'total_pages': 4, 'data': [{'id': 4, 'email': 'eve.holt@reqres.in', 'first_name': 'Eve', 'last_name': 'Holt', 'avatar': 'https://s3.amazonaws.com/uifaces/faces/...</msg>
+<status status="PASS" starttime="20190607 16:20:37.502" endtime="20190607 16:20:37.503"></status>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<doc>Get Value From JSON using JSONPath</doc>
+<arguments>
+<arg>${json_response}</arg>
+<arg>$.data[0].first_name</arg>
+</arguments>
+<assign>
+<var>@{first_name_list}</var>
+</assign>
+<msg timestamp="20190607 16:20:37.531" level="INFO">@{first_name_list} = [ Eve ]</msg>
+<status status="PASS" starttime="20190607 16:20:37.503" endtime="20190607 16:20:37.531"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${first_name_list}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${first_name}</var>
+</assign>
+<msg timestamp="20190607 16:20:37.531" level="INFO">${first_name} = Eve</msg>
+<status status="PASS" starttime="20190607 16:20:37.531" endtime="20190607 16:20:37.531"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${first_name}</arg>
+<arg>${expected_first_name}</arg>
+</arguments>
+<status status="PASS" starttime="20190607 16:20:37.532" endtime="20190607 16:20:37.532"></status>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<doc>Get Value From JSON using JSONPath</doc>
+<arguments>
+<arg>${json_response}</arg>
+<arg>$.data[0].last_name</arg>
+</arguments>
+<assign>
+<var>@{lastname_list}</var>
+</assign>
+<msg timestamp="20190607 16:20:37.557" level="INFO">@{lastname_list} = [ Holt ]</msg>
+<status status="PASS" starttime="20190607 16:20:37.532" endtime="20190607 16:20:37.557"></status>
+</kw>
+<kw name="Get From List" library="Collections">
+<doc>Returns the value specified with an ``index`` from ``list``.</doc>
+<arguments>
+<arg>${lastname_list}</arg>
+<arg>0</arg>
+</arguments>
+<assign>
+<var>${lastname}</var>
+</assign>
+<msg timestamp="20190607 16:20:37.557" level="INFO">${lastname} = Holt</msg>
+<status status="PASS" starttime="20190607 16:20:37.557" endtime="20190607 16:20:37.558"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${lastname}</arg>
+<arg>${expectes_last_name}</arg>
+</arguments>
+<status status="PASS" starttime="20190607 16:20:37.558" endtime="20190607 16:20:37.558"></status>
+</kw>
+<status status="PASS" starttime="20190607 16:20:37.388" endtime="20190607 16:20:37.558" critical="yes"></status>
 </test>
-<status status="PASS" starttime="20190607 12:49:08.777" endtime="20190607 12:49:11.118"></status>
+<status status="PASS" starttime="20190607 16:20:37.077" endtime="20190607 16:20:37.559"></status>
 </suite>
 <statistics>
 <total>

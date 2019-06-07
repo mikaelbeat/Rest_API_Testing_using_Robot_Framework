@@ -1,13 +1,14 @@
 
-Requests library
+
 -U requests
 -U robotframework-requests
 
 
-Jsonpath
 jsonpath_rw
 jsonpath_rw_extSUMMERSET
 
 
-DiffLibrary
 -U robotframework-difflibrary
+
+
+robotframework-jsonlibrary

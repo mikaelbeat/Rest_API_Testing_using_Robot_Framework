@@ -5,8 +5,8 @@ Library    DiffLibrary
 
 
 *** Variables ***
-${base_url}    http://thetestingworldapi.com/
-${uri}    api/studentsDetails
+${base_url}    https://reqres.in
+${uri}    /api/users?page=2
 ${response_folder}    Response
 ${expected_folder}    Expected
 
