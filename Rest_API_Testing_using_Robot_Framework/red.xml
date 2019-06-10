@@ -2,9 +2,9 @@
 <projectConfiguration>
     <configVersion>2</configVersion>
     <relativeTo>WORKSPACE</relativeTo>
-    <referencedLibrary type="PYTHON" name="RequestsLibrary" path="C:/Users/Mikaelbeat/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/RequestsLibrary/__init__.py"/>
-    <referencedLibrary type="PYTHON" name="DiffLibrary" path="C:/Users/Mikaelbeat/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/DiffLibrary/__init__.py"/>
-    <referencedLibrary type="PYTHON" name="JSONLibrary" path="C:/Users/Mikaelbeat/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/JSONLibrary/__init__.py"/>
+    <referencedLibrary type="PYTHON" name="RequestsLibrary" path="C:/Users/ryynapet/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/RequestsLibrary/__init__.py"/>
+    <referencedLibrary type="PYTHON" name="DiffLibrary" path="C:/Users/ryynapet/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/DiffLibrary/__init__.py"/>
+    <referencedLibrary type="PYTHON" name="JSONLibrary" path="C:/Users/ryynapet/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/JSONLibrary/__init__.py"/>
     <pythonpath/>
     <classpath/>
     <excludedForValidation/>

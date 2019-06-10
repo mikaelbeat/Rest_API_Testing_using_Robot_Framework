@@ -5,7 +5,7 @@
 
 
 jsonpath_rw
-jsonpath_rw_extSUMMERSET
+jsonpath_rw_ext
 
 
 -U robotframework-difflibrary
