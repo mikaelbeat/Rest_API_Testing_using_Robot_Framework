@@ -5,10 +5,19 @@ Library    Collections
 Resource    ../Resources/Common_variables.robot    
 
 
-*** Test Cases ***
-Delete request
-    Create Session    session    ${BASE_URL}
-    ${response}    Delete Request    session    ${DELETE_URI}
+*** Keywords ***
+Create connection
+  Create Session    session    ${BASE_URL}  
+
+Send request and validate status code
+     ${response}    Delete Request    session    ${DELETE_URI}
     ${code}    Convert To String    ${response.status_code}
     Should Be Equal    ${code}    204    
-    Log    ${response.content}            
+    Log    ${response.content}
+
+
+*** Test Cases ***
+Validate DELETE Request
+    Create connection
+    Send request and validate status code
+               
