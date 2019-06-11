@@ -4,6 +4,8 @@ Library    JSONLibrary
 Library    Collections
 Library    OperatingSystem        
 Resource    ../Resources/Common_variables.robot
+Resource    ../Resources/Common_keywords.robot
+Test Setup    Create connection
 
 
 *** Variables ***
@@ -12,10 +14,7 @@ ${request}    Post_request.json
 ${response_file}    Post_response.json
 
 
-*** Keywords ***
-Create connection
-    Create Session    session    ${BASE_URL} 
-    
+*** Keywords ***    
 Get and send request
     ${request_body}    Get Binary File    ${REQUESTS_FOLDER}/${request}
     &{header}    Create Dictionary    Content-Type=application/json    #${header}
@@ -35,9 +34,6 @@ Save response to file
 
 *** Test Cases ***
 Validate POST request
-        Create connection
         Get and send request
         Validate and log response
-        Save response to file
-          
-       
+        Save response to file    

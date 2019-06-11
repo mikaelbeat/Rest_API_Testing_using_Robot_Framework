@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.1.2 (Python 3.7.3 on win32)" generated="20190610 17:05:18.216" rpa="false">
+<robot generator="Robot 3.1.2 (Python 3.7.3 on win32)" generated="20190611 12:44:08.803" rpa="false">
 <suite id="s1" name="Tests" source="C:\Users\ryynapet\git\Rest_API_Testing_using_Robot_Framework\Rest_API_Testing_using_Robot_Framework\REST_API_Testing\Tests">
 <suite id="s1-s1" name="Delete request" source="C:\Users\ryynapet\git\Rest_API_Testing_using_Robot_Framework\Rest_API_Testing_using_Robot_Framework\REST_API_Testing\Tests\Delete_request.robot">
 <test id="s1-s1-t1" name="Validate DELETE Request">
-<kw name="Create connection">
+<kw name="Create connection" library="Common_keywords" type="setup">
 <kw name="Create Session" library="RequestsLibrary">
 <doc>Create Session: create a HTTP session to a server</doc>
 <arguments>
 <arg>session</arg>
 <arg>${BASE_URL}</arg>
 </arguments>
-<msg timestamp="20190610 17:05:18.456" level="INFO">Creating Session using : alias=session, url=https://reqres.in, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20190610 17:05:18.455" endtime="20190610 17:05:18.456"></status>
+<msg timestamp="20190611 12:44:09.046" level="INFO">Creating Session using : alias=session, url=https://reqres.in, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20190611 12:44:09.046" endtime="20190611 12:44:09.046"></status>
 </kw>
-<status status="PASS" starttime="20190610 17:05:18.455" endtime="20190610 17:05:18.456"></status>
+<status status="PASS" starttime="20190611 12:44:09.046" endtime="20190611 12:44:09.046"></status>
 </kw>
 <kw name="Send request and validate status code">
 <kw name="Delete Request" library="RequestsLibrary">
@@ -26,11 +26,11 @@ given `alias`</doc>
 <assign>
 <var>${response}</var>
 </assign>
-<msg timestamp="20190610 17:05:18.596" level="INFO">Delete Request using : alias=session, uri=/api/users/2, data=None,                     headers=None, allow_redirects=True </msg>
-<msg timestamp="20190610 17:05:18.596" level="INFO">c:\users\ryynapet\appdata\local\programs\python\python37-32\lib\site-packages\urllib3\connectionpool.py:847: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+<msg timestamp="20190611 12:44:09.192" level="INFO">Delete Request using : alias=session, uri=/api/users/2, data=None,                     headers=None, allow_redirects=True </msg>
+<msg timestamp="20190611 12:44:09.192" level="INFO">c:\users\ryynapet\appdata\local\programs\python\python37-32\lib\site-packages\urllib3\connectionpool.py:847: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
   InsecureRequestWarning)</msg>
-<msg timestamp="20190610 17:05:18.597" level="INFO">${response} = &lt;Response [204]&gt;</msg>
-<status status="PASS" starttime="20190610 17:05:18.456" endtime="20190610 17:05:18.597"></status>
+<msg timestamp="20190611 12:44:09.193" level="INFO">${response} = &lt;Response [204]&gt;</msg>
+<status status="PASS" starttime="20190611 12:44:09.047" endtime="20190611 12:44:09.193"></status>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <doc>Converts the given item to a Unicode string.</doc>
@@ -40,8 +40,8 @@ given `alias`</doc>
 <assign>
 <var>${code}</var>
 </assign>
-<msg timestamp="20190610 17:05:18.597" level="INFO">${code} = 204</msg>
-<status status="PASS" starttime="20190610 17:05:18.597" endtime="20190610 17:05:18.597"></status>
+<msg timestamp="20190611 12:44:09.195" level="INFO">${code} = 204</msg>
+<status status="PASS" starttime="20190611 12:44:09.194" endtime="20190611 12:44:09.195"></status>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <doc>Fails if the given objects are unequal.</doc>
@@ -49,35 +49,35 @@ given `alias`</doc>
 <arg>${code}</arg>
 <arg>204</arg>
 </arguments>
-<status status="PASS" starttime="20190610 17:05:18.597" endtime="20190610 17:05:18.598"></status>
+<status status="PASS" starttime="20190611 12:44:09.195" endtime="20190611 12:44:09.196"></status>
 </kw>
 <kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
 <arg>${response.content}</arg>
 </arguments>
-<msg timestamp="20190610 17:05:18.598" level="INFO"></msg>
-<status status="PASS" starttime="20190610 17:05:18.598" endtime="20190610 17:05:18.598"></status>
+<msg timestamp="20190611 12:44:09.198" level="INFO"></msg>
+<status status="PASS" starttime="20190611 12:44:09.197" endtime="20190611 12:44:09.198"></status>
 </kw>
-<status status="PASS" starttime="20190610 17:05:18.456" endtime="20190610 17:05:18.598"></status>
+<status status="PASS" starttime="20190611 12:44:09.047" endtime="20190611 12:44:09.198"></status>
 </kw>
-<status status="PASS" starttime="20190610 17:05:18.455" endtime="20190610 17:05:18.600" critical="yes"></status>
+<status status="PASS" starttime="20190611 12:44:09.045" endtime="20190611 12:44:09.200" critical="yes"></status>
 </test>
-<status status="PASS" starttime="20190610 17:05:18.240" endtime="20190610 17:05:18.601"></status>
+<status status="PASS" starttime="20190611 12:44:08.826" endtime="20190611 12:44:09.203"></status>
 </suite>
 <suite id="s1-s2" name="Get request" source="C:\Users\ryynapet\git\Rest_API_Testing_using_Robot_Framework\Rest_API_Testing_using_Robot_Framework\REST_API_Testing\Tests\Get_request.robot">
 <test id="s1-s2-t1" name="Validate GET Request">
-<kw name="Create connection">
+<kw name="Create connection" library="Common_keywords" type="setup">
 <kw name="Create Session" library="RequestsLibrary">
 <doc>Create Session: create a HTTP session to a server</doc>
 <arguments>
 <arg>session</arg>
 <arg>${BASE_URL}</arg>
 </arguments>
-<msg timestamp="20190610 17:05:18.617" level="INFO">Creating Session using : alias=session, url=https://reqres.in, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20190610 17:05:18.617" endtime="20190610 17:05:18.617"></status>
+<msg timestamp="20190611 12:44:09.231" level="INFO">Creating Session using : alias=session, url=https://reqres.in, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20190611 12:44:09.231" endtime="20190611 12:44:09.231"></status>
 </kw>
-<status status="PASS" starttime="20190610 17:05:18.617" endtime="20190610 17:05:18.618"></status>
+<status status="PASS" starttime="20190611 12:44:09.231" endtime="20190611 12:44:09.231"></status>
 </kw>
 <kw name="Send request and validate status code">
 <kw name="Get Request" library="RequestsLibrary">
@@ -90,27 +90,27 @@ given `alias`</doc>
 <assign>
 <var>${response}</var>
 </assign>
-<msg timestamp="20190610 17:05:18.693" level="INFO">Get Request using : alias=session, uri=/api/users?page=2, headers=None json=None</msg>
-<msg timestamp="20190610 17:05:18.693" level="INFO">c:\users\ryynapet\appdata\local\programs\python\python37-32\lib\site-packages\urllib3\connectionpool.py:847: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+<msg timestamp="20190611 12:44:09.277" level="INFO">Get Request using : alias=session, uri=/api/users?page=2, headers=None json=None</msg>
+<msg timestamp="20190611 12:44:09.277" level="INFO">c:\users\ryynapet\appdata\local\programs\python\python37-32\lib\site-packages\urllib3\connectionpool.py:847: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
   InsecureRequestWarning)</msg>
-<msg timestamp="20190610 17:05:18.694" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20190610 17:05:18.618" endtime="20190610 17:05:18.694"></status>
+<msg timestamp="20190611 12:44:09.277" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20190611 12:44:09.232" endtime="20190611 12:44:09.277"></status>
 </kw>
 <kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
 <arg>${response.status_code}</arg>
 </arguments>
-<msg timestamp="20190610 17:05:18.695" level="INFO">200</msg>
-<status status="PASS" starttime="20190610 17:05:18.695" endtime="20190610 17:05:18.695"></status>
+<msg timestamp="20190611 12:44:09.277" level="INFO">200</msg>
+<status status="PASS" starttime="20190611 12:44:09.277" endtime="20190611 12:44:09.278"></status>
 </kw>
 <kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
 <arg>${response.content}</arg>
 </arguments>
-<msg timestamp="20190610 17:05:18.695" level="INFO">{"page":2,"per_page":3,"total":12,"total_pages":4,"data":[{"id":4,"email":"eve.holt@reqres.in","first_name":"Eve","last_name":"Holt","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg"},{"id":5,"email":"charles.morris@reqres.in","first_name":"Charles","last_name":"Morris","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"},{"id":6,"email":"tracey.ramos@reqres.in","first_name":"Tracey","last_name":"Ramos","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"}]}</msg>
-<status status="PASS" starttime="20190610 17:05:18.695" endtime="20190610 17:05:18.695"></status>
+<msg timestamp="20190611 12:44:09.278" level="INFO">{"page":2,"per_page":3,"total":12,"total_pages":4,"data":[{"id":4,"email":"eve.holt@reqres.in","first_name":"Eve","last_name":"Holt","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg"},{"id":5,"email":"charles.morris@reqres.in","first_name":"Charles","last_name":"Morris","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"},{"id":6,"email":"tracey.ramos@reqres.in","first_name":"Tracey","last_name":"Ramos","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"}]}</msg>
+<status status="PASS" starttime="20190611 12:44:09.278" endtime="20190611 12:44:09.278"></status>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <doc>Fails if objects are unequal after converting them to strings.</doc>
@@ -118,10 +118,10 @@ given `alias`</doc>
 <arg>${response.status_code}</arg>
 <arg>200</arg>
 </arguments>
-<msg timestamp="20190610 17:05:18.696" level="INFO">Argument types are:
+<msg timestamp="20190611 12:44:09.278" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;type 'unicode'&gt;</msg>
-<status status="PASS" starttime="20190610 17:05:18.695" endtime="20190610 17:05:18.696"></status>
+<status status="PASS" starttime="20190611 12:44:09.278" endtime="20190611 12:44:09.278"></status>
 </kw>
 <kw name="Set Suite Variable" library="BuiltIn">
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
@@ -129,10 +129,10 @@ given `alias`</doc>
 <arg>${response}</arg>
 <arg>${response}</arg>
 </arguments>
-<msg timestamp="20190610 17:05:18.696" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20190610 17:05:18.696" endtime="20190610 17:05:18.696"></status>
+<msg timestamp="20190611 12:44:09.279" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20190611 12:44:09.278" endtime="20190611 12:44:09.279"></status>
 </kw>
-<status status="PASS" starttime="20190610 17:05:18.618" endtime="20190610 17:05:18.696"></status>
+<status status="PASS" starttime="20190611 12:44:09.232" endtime="20190611 12:44:09.279"></status>
 </kw>
 <kw name="Save response to file">
 <kw name="To Json" library="RequestsLibrary">
@@ -144,16 +144,16 @@ given `alias`</doc>
 <assign>
 <var>${pretty_printed_response}</var>
 </assign>
-<msg timestamp="20190610 17:05:18.697" level="INFO">To JSON using : content={"page":2,"per_page":3,"total":12,"total_pages":4,"data":[{"id":4,"email":"eve.holt@reqres.in","first_name":"Eve","last_name":"Holt","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg"},{"id":5,"email":"charles.morris@reqres.in","first_name":"Charles","last_name":"Morris","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"},{"id":6,"email":"tracey.ramos@reqres.in","first_name":"Tracey","last_name":"Ramos","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"}]} </msg>
-<msg timestamp="20190610 17:05:18.697" level="INFO">To JSON using : pretty_print=True </msg>
-<msg timestamp="20190610 17:05:18.697" level="INFO">${pretty_printed_response} = {
+<msg timestamp="20190611 12:44:09.280" level="INFO">To JSON using : content={"page":2,"per_page":3,"total":12,"total_pages":4,"data":[{"id":4,"email":"eve.holt@reqres.in","first_name":"Eve","last_name":"Holt","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg"},{"id":5,"email":"charles.morris@reqres.in","first_name":"Charles","last_name":"Morris","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"},{"id":6,"email":"tracey.ramos@reqres.in","first_name":"Tracey","last_name":"Ramos","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"}]} </msg>
+<msg timestamp="20190611 12:44:09.280" level="INFO">To JSON using : pretty_print=True </msg>
+<msg timestamp="20190611 12:44:09.280" level="INFO">${pretty_printed_response} = {
     "data": [
         {
             "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg",
             "email": "eve.holt@reqres.in",
             "first_name": "Eve",
      ...</msg>
-<status status="PASS" starttime="20190610 17:05:18.697" endtime="20190610 17:05:18.697"></status>
+<status status="PASS" starttime="20190611 12:44:09.279" endtime="20190611 12:44:09.280"></status>
 </kw>
 <kw name="Create Binary File" library="OperatingSystem">
 <doc>Creates a binary file with the given content.</doc>
@@ -161,10 +161,10 @@ given `alias`</doc>
 <arg>${RESPONSES_FOLDER}/${response_file}</arg>
 <arg>${pretty_printed_response}</arg>
 </arguments>
-<msg timestamp="20190610 17:05:18.698" level="INFO" html="yes">Created binary file '&lt;a href="file://C:\Users\ryynapet\git\Rest_API_Testing_using_Robot_Framework\Rest_API_Testing_using_Robot_Framework\REST_API_Testing\Responses\get_response.json"&gt;C:\Users\ryynapet\git\Rest_API_Testing_using_Robot_Framework\Rest_API_Testing_using_Robot_Framework\REST_API_Testing\Responses\get_response.json&lt;/a&gt;'.</msg>
-<status status="PASS" starttime="20190610 17:05:18.698" endtime="20190610 17:05:18.699"></status>
+<msg timestamp="20190611 12:44:09.281" level="INFO" html="yes">Created binary file '&lt;a href="file://C:\Users\ryynapet\git\Rest_API_Testing_using_Robot_Framework\Rest_API_Testing_using_Robot_Framework\REST_API_Testing\Responses\get_response.json"&gt;C:\Users\ryynapet\git\Rest_API_Testing_using_Robot_Framework\Rest_API_Testing_using_Robot_Framework\REST_API_Testing\Responses\get_response.json&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20190611 12:44:09.280" endtime="20190611 12:44:09.281"></status>
 </kw>
-<status status="PASS" starttime="20190610 17:05:18.697" endtime="20190610 17:05:18.699"></status>
+<status status="PASS" starttime="20190611 12:44:09.279" endtime="20190611 12:44:09.281"></status>
 </kw>
 <kw name="Validate response">
 <kw name="Get File" library="OperatingSystem">
@@ -176,15 +176,15 @@ given `alias`</doc>
 <assign>
 <var>${response}</var>
 </assign>
-<msg timestamp="20190610 17:05:18.699" level="INFO" html="yes">Getting file '&lt;a href="file://C:\Users\ryynapet\git\Rest_API_Testing_using_Robot_Framework\Rest_API_Testing_using_Robot_Framework\REST_API_Testing\Responses\get_response.json"&gt;C:\Users\ryynapet\git\Rest_API_Testing_using_Robot_Framework\Rest_API_Testing_using_Robot_Framework\REST_API_Testing\Responses\get_response.json&lt;/a&gt;'.</msg>
-<msg timestamp="20190610 17:05:18.700" level="INFO">${response} = {
+<msg timestamp="20190611 12:44:09.283" level="INFO" html="yes">Getting file '&lt;a href="file://C:\Users\ryynapet\git\Rest_API_Testing_using_Robot_Framework\Rest_API_Testing_using_Robot_Framework\REST_API_Testing\Responses\get_response.json"&gt;C:\Users\ryynapet\git\Rest_API_Testing_using_Robot_Framework\Rest_API_Testing_using_Robot_Framework\REST_API_Testing\Responses\get_response.json&lt;/a&gt;'.</msg>
+<msg timestamp="20190611 12:44:09.283" level="INFO">${response} = {
     "data": [
         {
             "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg",
             "email": "eve.holt@reqres.in",
             "first_name": "Eve",
      ...</msg>
-<status status="PASS" starttime="20190610 17:05:18.699" endtime="20190610 17:05:18.700"></status>
+<status status="PASS" starttime="20190611 12:44:09.283" endtime="20190611 12:44:09.283"></status>
 </kw>
 <kw name="Get File" library="OperatingSystem">
 <doc>Returns the contents of a specified file.</doc>
@@ -195,15 +195,15 @@ given `alias`</doc>
 <assign>
 <var>${expected}</var>
 </assign>
-<msg timestamp="20190610 17:05:18.700" level="INFO" html="yes">Getting file '&lt;a href="file://C:\Users\ryynapet\git\Rest_API_Testing_using_Robot_Framework\Rest_API_Testing_using_Robot_Framework\REST_API_Testing\Expected\expected_response.json"&gt;C:\Users\ryynapet\git\Rest_API_Testing_using_Robot_Framework\Rest_API_Testing_using_Robot_Framework\REST_API_Testing\Expected\expected_response.json&lt;/a&gt;'.</msg>
-<msg timestamp="20190610 17:05:18.700" level="INFO">${expected} = {
+<msg timestamp="20190611 12:44:09.284" level="INFO" html="yes">Getting file '&lt;a href="file://C:\Users\ryynapet\git\Rest_API_Testing_using_Robot_Framework\Rest_API_Testing_using_Robot_Framework\REST_API_Testing\Expected\expected_response.json"&gt;C:\Users\ryynapet\git\Rest_API_Testing_using_Robot_Framework\Rest_API_Testing_using_Robot_Framework\REST_API_Testing\Expected\expected_response.json&lt;/a&gt;'.</msg>
+<msg timestamp="20190611 12:44:09.284" level="INFO">${expected} = {
     "data": [
         {
             "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg",
             "email": "eve.holt@reqres.in",
             "first_name": "Eve",
      ...</msg>
-<status status="PASS" starttime="20190610 17:05:18.700" endtime="20190610 17:05:18.700"></status>
+<status status="PASS" starttime="20190611 12:44:09.283" endtime="20190611 12:44:09.284"></status>
 </kw>
 <kw name="Diff Outputs" library="DiffLibrary">
 <doc>Diff between target and source texts</doc>
@@ -211,30 +211,30 @@ given `alias`</doc>
 <arg>${response}</arg>
 <arg>${expected}</arg>
 </arguments>
-<msg timestamp="20190610 17:05:18.705" level="INFO">file1: C:\Users\ryynapet\AppData\Local\Temp\tmpfh6kigyx.txt</msg>
-<msg timestamp="20190610 17:05:18.705" level="INFO">file2: C:\Users\ryynapet\AppData\Local\Temp\tmpkfc7h7rx.txt</msg>
-<msg timestamp="20190610 17:05:18.705" level="INFO">c:\users\ryynapet\appdata\local\programs\python\python37-32\lib\site-packages\DiffLibrary\bin\diff\diff.exe --strip-trailing-cr  "C:\Users\ryynapet\AppData\Local\Temp\tmpfh6kigyx.txt" "C:\Users\ryynapet\AppData\Local\Temp\tmpkfc7h7rx.txt"</msg>
-<status status="PASS" starttime="20190610 17:05:18.700" endtime="20190610 17:05:18.758"></status>
+<msg timestamp="20190611 12:44:09.288" level="INFO">file1: C:\Users\ryynapet\AppData\Local\Temp\tmp8ct6gmkx.txt</msg>
+<msg timestamp="20190611 12:44:09.288" level="INFO">file2: C:\Users\ryynapet\AppData\Local\Temp\tmpm902qdcu.txt</msg>
+<msg timestamp="20190611 12:44:09.289" level="INFO">c:\users\ryynapet\appdata\local\programs\python\python37-32\lib\site-packages\DiffLibrary\bin\diff\diff.exe --strip-trailing-cr  "C:\Users\ryynapet\AppData\Local\Temp\tmp8ct6gmkx.txt" "C:\Users\ryynapet\AppData\Local\Temp\tmpm902qdcu.txt"</msg>
+<status status="PASS" starttime="20190611 12:44:09.284" endtime="20190611 12:44:09.338"></status>
 </kw>
-<status status="PASS" starttime="20190610 17:05:18.699" endtime="20190610 17:05:18.758"></status>
+<status status="PASS" starttime="20190611 12:44:09.283" endtime="20190611 12:44:09.338"></status>
 </kw>
-<status status="PASS" starttime="20190610 17:05:18.616" endtime="20190610 17:05:18.760" critical="yes"></status>
+<status status="PASS" starttime="20190611 12:44:09.230" endtime="20190611 12:44:09.338" critical="yes"></status>
 </test>
-<status status="PASS" starttime="20190610 17:05:18.602" endtime="20190610 17:05:18.760"></status>
+<status status="PASS" starttime="20190611 12:44:09.207" endtime="20190611 12:44:09.341"></status>
 </suite>
 <suite id="s1-s3" name="Get request specific person" source="C:\Users\ryynapet\git\Rest_API_Testing_using_Robot_Framework\Rest_API_Testing_using_Robot_Framework\REST_API_Testing\Tests\Get_request_specific_person.robot">
 <test id="s1-s3-t1" name="Validate GET Request for specific person">
-<kw name="Create connection">
+<kw name="Create connection" library="Common_keywords" type="setup">
 <kw name="Create Session" library="RequestsLibrary">
 <doc>Create Session: create a HTTP session to a server</doc>
 <arguments>
 <arg>session</arg>
 <arg>${BASE_URL}</arg>
 </arguments>
-<msg timestamp="20190610 17:05:18.766" level="INFO">Creating Session using : alias=session, url=https://reqres.in, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20190610 17:05:18.766" endtime="20190610 17:05:18.766"></status>
+<msg timestamp="20190611 12:44:09.348" level="INFO">Creating Session using : alias=session, url=https://reqres.in, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20190611 12:44:09.348" endtime="20190611 12:44:09.349"></status>
 </kw>
-<status status="PASS" starttime="20190610 17:05:18.766" endtime="20190610 17:05:18.766"></status>
+<status status="PASS" starttime="20190611 12:44:09.348" endtime="20190611 12:44:09.349"></status>
 </kw>
 <kw name="Send request and log response">
 <kw name="Get Request" library="RequestsLibrary">
@@ -247,27 +247,27 @@ given `alias`</doc>
 <assign>
 <var>${response}</var>
 </assign>
-<msg timestamp="20190610 17:05:18.821" level="INFO">Get Request using : alias=session, uri=/api/users?page=2, headers=None json=None</msg>
-<msg timestamp="20190610 17:05:18.821" level="INFO">c:\users\ryynapet\appdata\local\programs\python\python37-32\lib\site-packages\urllib3\connectionpool.py:847: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+<msg timestamp="20190611 12:44:09.406" level="INFO">Get Request using : alias=session, uri=/api/users?page=2, headers=None json=None</msg>
+<msg timestamp="20190611 12:44:09.406" level="INFO">c:\users\ryynapet\appdata\local\programs\python\python37-32\lib\site-packages\urllib3\connectionpool.py:847: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
   InsecureRequestWarning)</msg>
-<msg timestamp="20190610 17:05:18.822" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20190610 17:05:18.767" endtime="20190610 17:05:18.822"></status>
+<msg timestamp="20190611 12:44:09.406" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20190611 12:44:09.349" endtime="20190611 12:44:09.406"></status>
 </kw>
 <kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
 <arg>${response.status_code}</arg>
 </arguments>
-<msg timestamp="20190610 17:05:18.822" level="INFO">200</msg>
-<status status="PASS" starttime="20190610 17:05:18.822" endtime="20190610 17:05:18.822"></status>
+<msg timestamp="20190611 12:44:09.407" level="INFO">200</msg>
+<status status="PASS" starttime="20190611 12:44:09.407" endtime="20190611 12:44:09.407"></status>
 </kw>
 <kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
 <arg>${response.content}</arg>
 </arguments>
-<msg timestamp="20190610 17:05:18.823" level="INFO">{"page":2,"per_page":3,"total":12,"total_pages":4,"data":[{"id":4,"email":"eve.holt@reqres.in","first_name":"Eve","last_name":"Holt","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg"},{"id":5,"email":"charles.morris@reqres.in","first_name":"Charles","last_name":"Morris","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"},{"id":6,"email":"tracey.ramos@reqres.in","first_name":"Tracey","last_name":"Ramos","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"}]}</msg>
-<status status="PASS" starttime="20190610 17:05:18.822" endtime="20190610 17:05:18.823"></status>
+<msg timestamp="20190611 12:44:09.407" level="INFO">{"page":2,"per_page":3,"total":12,"total_pages":4,"data":[{"id":4,"email":"eve.holt@reqres.in","first_name":"Eve","last_name":"Holt","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg"},{"id":5,"email":"charles.morris@reqres.in","first_name":"Charles","last_name":"Morris","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"},{"id":6,"email":"tracey.ramos@reqres.in","first_name":"Tracey","last_name":"Ramos","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"}]}</msg>
+<status status="PASS" starttime="20190611 12:44:09.407" endtime="20190611 12:44:09.407"></status>
 </kw>
 <kw name="Set Suite Variable" library="BuiltIn">
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
@@ -275,10 +275,10 @@ given `alias`</doc>
 <arg>${response}</arg>
 <arg>${response}</arg>
 </arguments>
-<msg timestamp="20190610 17:05:18.823" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20190610 17:05:18.823" endtime="20190610 17:05:18.823"></status>
+<msg timestamp="20190611 12:44:09.407" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20190611 12:44:09.407" endtime="20190611 12:44:09.408"></status>
 </kw>
-<status status="PASS" starttime="20190610 17:05:18.767" endtime="20190610 17:05:18.823"></status>
+<status status="PASS" starttime="20190611 12:44:09.349" endtime="20190611 12:44:09.408"></status>
 </kw>
 <kw name="Validate response">
 <kw name="To Json" library="RequestsLibrary">
@@ -289,10 +289,10 @@ given `alias`</doc>
 <assign>
 <var>${json_response}</var>
 </assign>
-<msg timestamp="20190610 17:05:18.824" level="INFO">To JSON using : content={"page":2,"per_page":3,"total":12,"total_pages":4,"data":[{"id":4,"email":"eve.holt@reqres.in","first_name":"Eve","last_name":"Holt","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg"},{"id":5,"email":"charles.morris@reqres.in","first_name":"Charles","last_name":"Morris","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"},{"id":6,"email":"tracey.ramos@reqres.in","first_name":"Tracey","last_name":"Ramos","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"}]} </msg>
-<msg timestamp="20190610 17:05:18.824" level="INFO">To JSON using : pretty_print=False </msg>
-<msg timestamp="20190610 17:05:18.824" level="INFO">${json_response} = {'page': 2, 'per_page': 3, 'total': 12, 'total_pages': 4, 'data': [{'id': 4, 'email': 'eve.holt@reqres.in', 'first_name': 'Eve', 'last_name': 'Holt', 'avatar': 'https://s3.amazonaws.com/uifaces/faces/...</msg>
-<status status="PASS" starttime="20190610 17:05:18.824" endtime="20190610 17:05:18.824"></status>
+<msg timestamp="20190611 12:44:09.408" level="INFO">To JSON using : content={"page":2,"per_page":3,"total":12,"total_pages":4,"data":[{"id":4,"email":"eve.holt@reqres.in","first_name":"Eve","last_name":"Holt","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg"},{"id":5,"email":"charles.morris@reqres.in","first_name":"Charles","last_name":"Morris","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"},{"id":6,"email":"tracey.ramos@reqres.in","first_name":"Tracey","last_name":"Ramos","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"}]} </msg>
+<msg timestamp="20190611 12:44:09.408" level="INFO">To JSON using : pretty_print=False </msg>
+<msg timestamp="20190611 12:44:09.408" level="INFO">${json_response} = {'page': 2, 'per_page': 3, 'total': 12, 'total_pages': 4, 'data': [{'id': 4, 'email': 'eve.holt@reqres.in', 'first_name': 'Eve', 'last_name': 'Holt', 'avatar': 'https://s3.amazonaws.com/uifaces/faces/...</msg>
+<status status="PASS" starttime="20190611 12:44:09.408" endtime="20190611 12:44:09.409"></status>
 </kw>
 <kw name="Get Value From Json" library="JSONLibrary">
 <doc>Get Value From JSON using JSONPath</doc>
@@ -303,8 +303,8 @@ given `alias`</doc>
 <assign>
 <var>@{first_name_list}</var>
 </assign>
-<msg timestamp="20190610 17:05:18.853" level="INFO">@{first_name_list} = [ Eve ]</msg>
-<status status="PASS" starttime="20190610 17:05:18.824" endtime="20190610 17:05:18.853"></status>
+<msg timestamp="20190611 12:44:09.437" level="INFO">@{first_name_list} = [ Eve ]</msg>
+<status status="PASS" starttime="20190611 12:44:09.409" endtime="20190611 12:44:09.437"></status>
 </kw>
 <kw name="Get From List" library="Collections">
 <doc>Returns the value specified with an ``index`` from ``list``.</doc>
@@ -315,8 +315,8 @@ given `alias`</doc>
 <assign>
 <var>${first_name}</var>
 </assign>
-<msg timestamp="20190610 17:05:18.853" level="INFO">${first_name} = Eve</msg>
-<status status="PASS" starttime="20190610 17:05:18.853" endtime="20190610 17:05:18.853"></status>
+<msg timestamp="20190611 12:44:09.438" level="INFO">${first_name} = Eve</msg>
+<status status="PASS" starttime="20190611 12:44:09.437" endtime="20190611 12:44:09.438"></status>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <doc>Fails if the given objects are unequal.</doc>
@@ -324,7 +324,7 @@ given `alias`</doc>
 <arg>${first_name}</arg>
 <arg>${expected_first_name}</arg>
 </arguments>
-<status status="PASS" starttime="20190610 17:05:18.853" endtime="20190610 17:05:18.853"></status>
+<status status="PASS" starttime="20190611 12:44:09.438" endtime="20190611 12:44:09.438"></status>
 </kw>
 <kw name="Get Value From Json" library="JSONLibrary">
 <doc>Get Value From JSON using JSONPath</doc>
@@ -335,8 +335,8 @@ given `alias`</doc>
 <assign>
 <var>@{lastname_list}</var>
 </assign>
-<msg timestamp="20190610 17:05:18.883" level="INFO">@{lastname_list} = [ Holt ]</msg>
-<status status="PASS" starttime="20190610 17:05:18.853" endtime="20190610 17:05:18.884"></status>
+<msg timestamp="20190611 12:44:09.468" level="INFO">@{lastname_list} = [ Holt ]</msg>
+<status status="PASS" starttime="20190611 12:44:09.438" endtime="20190611 12:44:09.468"></status>
 </kw>
 <kw name="Get From List" library="Collections">
 <doc>Returns the value specified with an ``index`` from ``list``.</doc>
@@ -347,8 +347,8 @@ given `alias`</doc>
 <assign>
 <var>${lastname}</var>
 </assign>
-<msg timestamp="20190610 17:05:18.884" level="INFO">${lastname} = Holt</msg>
-<status status="PASS" starttime="20190610 17:05:18.884" endtime="20190610 17:05:18.884"></status>
+<msg timestamp="20190611 12:44:09.469" level="INFO">${lastname} = Holt</msg>
+<status status="PASS" starttime="20190611 12:44:09.468" endtime="20190611 12:44:09.469"></status>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <doc>Fails if the given objects are unequal.</doc>
@@ -356,24 +356,27 @@ given `alias`</doc>
 <arg>${lastname}</arg>
 <arg>${expectes_last_name}</arg>
 </arguments>
-<status status="PASS" starttime="20190610 17:05:18.884" endtime="20190610 17:05:18.884"></status>
+<status status="PASS" starttime="20190611 12:44:09.469" endtime="20190611 12:44:09.469"></status>
 </kw>
-<status status="PASS" starttime="20190610 17:05:18.824" endtime="20190610 17:05:18.884"></status>
+<status status="PASS" starttime="20190611 12:44:09.408" endtime="20190611 12:44:09.469"></status>
 </kw>
-<status status="PASS" starttime="20190610 17:05:18.765" endtime="20190610 17:05:18.885" critical="yes"></status>
+<status status="PASS" starttime="20190611 12:44:09.348" endtime="20190611 12:44:09.470" critical="yes"></status>
 </test>
-<status status="PASS" starttime="20190610 17:05:18.761" endtime="20190610 17:05:18.885"></status>
+<status status="PASS" starttime="20190611 12:44:09.342" endtime="20190611 12:44:09.471"></status>
 </suite>
 <suite id="s1-s4" name="Get request with parameters" source="C:\Users\ryynapet\git\Rest_API_Testing_using_Robot_Framework\Rest_API_Testing_using_Robot_Framework\REST_API_Testing\Tests\Get_request_with_parameters.robot">
 <test id="s1-s4-t1" name="Validate get request with parameters">
+<kw name="Create connection" library="Common_keywords" type="setup">
 <kw name="Create Session" library="RequestsLibrary">
 <doc>Create Session: create a HTTP session to a server</doc>
 <arguments>
 <arg>session</arg>
 <arg>${BASE_URL}</arg>
 </arguments>
-<msg timestamp="20190610 17:05:18.891" level="INFO">Creating Session using : alias=session, url=https://reqres.in, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20190610 17:05:18.891" endtime="20190610 17:05:18.891"></status>
+<msg timestamp="20190611 12:44:09.477" level="INFO">Creating Session using : alias=session, url=https://reqres.in, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20190611 12:44:09.477" endtime="20190611 12:44:09.478"></status>
+</kw>
+<status status="PASS" starttime="20190611 12:44:09.477" endtime="20190611 12:44:09.478"></status>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
@@ -383,8 +386,8 @@ given `alias`</doc>
 <assign>
 <var>&amp;{parameters}</var>
 </assign>
-<msg timestamp="20190610 17:05:18.892" level="INFO">&amp;{parameters} = { value=2 }</msg>
-<status status="PASS" starttime="20190610 17:05:18.892" endtime="20190610 17:05:18.892"></status>
+<msg timestamp="20190611 12:44:09.479" level="INFO">&amp;{parameters} = { value=2 }</msg>
+<status status="PASS" starttime="20190611 12:44:09.478" endtime="20190611 12:44:09.479"></status>
 </kw>
 <kw name="Get Request" library="RequestsLibrary">
 <doc>Send a GET request on the session object found using the
@@ -397,19 +400,19 @@ given `alias`</doc>
 <assign>
 <var>${response}</var>
 </assign>
-<msg timestamp="20190610 17:05:18.932" level="INFO">Get Request using : alias=session, uri=/api/users, headers={'value': '2'} json=None</msg>
-<msg timestamp="20190610 17:05:18.932" level="INFO">c:\users\ryynapet\appdata\local\programs\python\python37-32\lib\site-packages\urllib3\connectionpool.py:847: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+<msg timestamp="20190611 12:44:09.527" level="INFO">Get Request using : alias=session, uri=/api/users, headers={'value': '2'} json=None</msg>
+<msg timestamp="20190611 12:44:09.527" level="INFO">c:\users\ryynapet\appdata\local\programs\python\python37-32\lib\site-packages\urllib3\connectionpool.py:847: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
   InsecureRequestWarning)</msg>
-<msg timestamp="20190610 17:05:18.932" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20190610 17:05:18.892" endtime="20190610 17:05:18.932"></status>
+<msg timestamp="20190611 12:44:09.527" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20190611 12:44:09.479" endtime="20190611 12:44:09.527"></status>
 </kw>
 <kw name="Log" library="BuiltIn">
 <doc>Logs the given message with the given level.</doc>
 <arguments>
 <arg>${response.content}</arg>
 </arguments>
-<msg timestamp="20190610 17:05:18.933" level="INFO">{"page":1,"per_page":3,"total":12,"total_pages":4,"data":[{"id":1,"email":"george.bluth@reqres.in","first_name":"George","last_name":"Bluth","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg"},{"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg"},{"id":3,"email":"emma.wong@reqres.in","first_name":"Emma","last_name":"Wong","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/olegpogodaev/128.jpg"}]}</msg>
-<status status="PASS" starttime="20190610 17:05:18.933" endtime="20190610 17:05:18.933"></status>
+<msg timestamp="20190611 12:44:09.528" level="INFO">{"page":1,"per_page":3,"total":12,"total_pages":4,"data":[{"id":1,"email":"george.bluth@reqres.in","first_name":"George","last_name":"Bluth","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg"},{"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg"},{"id":3,"email":"emma.wong@reqres.in","first_name":"Emma","last_name":"Wong","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/olegpogodaev/128.jpg"}]}</msg>
+<status status="PASS" starttime="20190611 12:44:09.527" endtime="20190611 12:44:09.528"></status>
 </kw>
 <kw name="To Json" library="RequestsLibrary">
 <doc>Convert a string to a JSON object</doc>
@@ -419,10 +422,10 @@ given `alias`</doc>
 <assign>
 <var>${json_response}</var>
 </assign>
-<msg timestamp="20190610 17:05:18.934" level="INFO">To JSON using : content={"page":1,"per_page":3,"total":12,"total_pages":4,"data":[{"id":1,"email":"george.bluth@reqres.in","first_name":"George","last_name":"Bluth","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg"},{"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg"},{"id":3,"email":"emma.wong@reqres.in","first_name":"Emma","last_name":"Wong","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/olegpogodaev/128.jpg"}]} </msg>
-<msg timestamp="20190610 17:05:18.934" level="INFO">To JSON using : pretty_print=False </msg>
-<msg timestamp="20190610 17:05:18.934" level="INFO">${json_response} = {'page': 1, 'per_page': 3, 'total': 12, 'total_pages': 4, 'data': [{'id': 1, 'email': 'george.bluth@reqres.in', 'first_name': 'George', 'last_name': 'Bluth', 'avatar': 'https://s3.amazonaws.com/uiface...</msg>
-<status status="PASS" starttime="20190610 17:05:18.934" endtime="20190610 17:05:18.934"></status>
+<msg timestamp="20190611 12:44:09.528" level="INFO">To JSON using : content={"page":1,"per_page":3,"total":12,"total_pages":4,"data":[{"id":1,"email":"george.bluth@reqres.in","first_name":"George","last_name":"Bluth","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg"},{"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg"},{"id":3,"email":"emma.wong@reqres.in","first_name":"Emma","last_name":"Wong","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/olegpogodaev/128.jpg"}]} </msg>
+<msg timestamp="20190611 12:44:09.528" level="INFO">To JSON using : pretty_print=False </msg>
+<msg timestamp="20190611 12:44:09.528" level="INFO">${json_response} = {'page': 1, 'per_page': 3, 'total': 12, 'total_pages': 4, 'data': [{'id': 1, 'email': 'george.bluth@reqres.in', 'first_name': 'George', 'last_name': 'Bluth', 'avatar': 'https://s3.amazonaws.com/uiface...</msg>
+<status status="PASS" starttime="20190611 12:44:09.528" endtime="20190611 12:44:09.528"></status>
 </kw>
 <kw name="Get Value From Json" library="JSONLibrary">
 <doc>Get Value From JSON using JSONPath</doc>
@@ -433,8 +436,8 @@ given `alias`</doc>
 <assign>
 <var>@{name_list}</var>
 </assign>
-<msg timestamp="20190610 17:05:18.959" level="INFO">@{name_list} = [ George ]</msg>
-<status status="PASS" starttime="20190610 17:05:18.935" endtime="20190610 17:05:18.959"></status>
+<msg timestamp="20190611 12:44:09.553" level="INFO">@{name_list} = [ George ]</msg>
+<status status="PASS" starttime="20190611 12:44:09.529" endtime="20190611 12:44:09.553"></status>
 </kw>
 <kw name="Get From List" library="Collections">
 <doc>Returns the value specified with an ``index`` from ``list``.</doc>
@@ -445,8 +448,8 @@ given `alias`</doc>
 <assign>
 <var>${name}</var>
 </assign>
-<msg timestamp="20190610 17:05:18.960" level="INFO">${name} = George</msg>
-<status status="PASS" starttime="20190610 17:05:18.960" endtime="20190610 17:05:18.960"></status>
+<msg timestamp="20190611 12:44:09.554" level="INFO">${name} = George</msg>
+<status status="PASS" starttime="20190611 12:44:09.554" endtime="20190611 12:44:09.554"></status>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <doc>Fails if the given objects are unequal.</doc>
@@ -454,25 +457,25 @@ given `alias`</doc>
 <arg>${name}</arg>
 <arg>George</arg>
 </arguments>
-<status status="PASS" starttime="20190610 17:05:18.960" endtime="20190610 17:05:18.960"></status>
+<status status="PASS" starttime="20190611 12:44:09.554" endtime="20190611 12:44:09.554"></status>
 </kw>
-<status status="PASS" starttime="20190610 17:05:18.890" endtime="20190610 17:05:18.961" critical="yes"></status>
+<status status="PASS" starttime="20190611 12:44:09.477" endtime="20190611 12:44:09.555" critical="yes"></status>
 </test>
-<status status="PASS" starttime="20190610 17:05:18.887" endtime="20190610 17:05:18.962"></status>
+<status status="PASS" starttime="20190611 12:44:09.472" endtime="20190611 12:44:09.556"></status>
 </suite>
 <suite id="s1-s5" name="Post request" source="C:\Users\ryynapet\git\Rest_API_Testing_using_Robot_Framework\Rest_API_Testing_using_Robot_Framework\REST_API_Testing\Tests\Post_request.robot">
 <test id="s1-s5-t1" name="Validate POST request">
-<kw name="Create connection">
+<kw name="Create connection" library="Common_keywords" type="setup">
 <kw name="Create Session" library="RequestsLibrary">
 <doc>Create Session: create a HTTP session to a server</doc>
 <arguments>
 <arg>session</arg>
 <arg>${BASE_URL}</arg>
 </arguments>
-<msg timestamp="20190610 17:05:18.967" level="INFO">Creating Session using : alias=session, url=https://reqres.in, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20190610 17:05:18.967" endtime="20190610 17:05:18.968"></status>
+<msg timestamp="20190611 12:44:09.564" level="INFO">Creating Session using : alias=session, url=https://reqres.in, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20190611 12:44:09.564" endtime="20190611 12:44:09.565"></status>
 </kw>
-<status status="PASS" starttime="20190610 17:05:18.967" endtime="20190610 17:05:18.968"></status>
+<status status="PASS" starttime="20190611 12:44:09.564" endtime="20190611 12:44:09.565"></status>
 </kw>
 <kw name="Get and send request">
 <kw name="Get Binary File" library="OperatingSystem">
@@ -483,12 +486,12 @@ given `alias`</doc>
 <assign>
 <var>${request_body}</var>
 </assign>
-<msg timestamp="20190610 17:05:18.968" level="INFO" html="yes">Getting file '&lt;a href="file://C:\Users\ryynapet\git\Rest_API_Testing_using_Robot_Framework\Rest_API_Testing_using_Robot_Framework\REST_API_Testing\Requests\Post_request.json"&gt;C:\Users\ryynapet\git\Rest_API_Testing_using_Robot_Framework\Rest_API_Testing_using_Robot_Framework\REST_API_Testing\Requests\Post_request.json&lt;/a&gt;'.</msg>
-<msg timestamp="20190610 17:05:18.969" level="INFO">${request_body} = {
+<msg timestamp="20190611 12:44:09.565" level="INFO" html="yes">Getting file '&lt;a href="file://C:\Users\ryynapet\git\Rest_API_Testing_using_Robot_Framework\Rest_API_Testing_using_Robot_Framework\REST_API_Testing\Requests\Post_request.json"&gt;C:\Users\ryynapet\git\Rest_API_Testing_using_Robot_Framework\Rest_API_Testing_using_Robot_Framework\REST_API_Testing\Requests\Post_request.json&lt;/a&gt;'.</msg>
+<msg timestamp="20190611 12:44:09.566" level="INFO">${request_body} = {
     "name": "morpheus",
     "job": "leader"
 }</msg>
-<status status="PASS" starttime="20190610 17:05:18.968" endtime="20190610 17:05:18.969"></status>
+<status status="PASS" starttime="20190611 12:44:09.565" endtime="20190611 12:44:09.566"></status>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
@@ -498,8 +501,8 @@ given `alias`</doc>
 <assign>
 <var>&amp;{header}</var>
 </assign>
-<msg timestamp="20190610 17:05:18.969" level="INFO">&amp;{header} = { Content-Type=application/json }</msg>
-<status status="PASS" starttime="20190610 17:05:18.969" endtime="20190610 17:05:18.969"></status>
+<msg timestamp="20190611 12:44:09.566" level="INFO">&amp;{header} = { Content-Type=application/json }</msg>
+<status status="PASS" starttime="20190611 12:44:09.566" endtime="20190611 12:44:09.567"></status>
 </kw>
 <kw name="Post Request" library="RequestsLibrary">
 <doc>Send a POST request on the session object found using the
@@ -512,11 +515,11 @@ given `alias`</doc>
 <assign>
 <var>${response}</var>
 </assign>
-<msg timestamp="20190610 17:05:19.094" level="INFO">Post Request using : alias=session, uri=/api/users, data=&lt;empty&gt;, headers=None, files=None, allow_redirects=True </msg>
-<msg timestamp="20190610 17:05:19.094" level="INFO">c:\users\ryynapet\appdata\local\programs\python\python37-32\lib\site-packages\urllib3\connectionpool.py:847: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+<msg timestamp="20190611 12:44:09.692" level="INFO">Post Request using : alias=session, uri=/api/users, data=&lt;empty&gt;, headers=None, files=None, allow_redirects=True </msg>
+<msg timestamp="20190611 12:44:09.692" level="INFO">c:\users\ryynapet\appdata\local\programs\python\python37-32\lib\site-packages\urllib3\connectionpool.py:847: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
   InsecureRequestWarning)</msg>
-<msg timestamp="20190610 17:05:19.096" level="INFO">${response} = &lt;Response [201]&gt;</msg>
-<status status="PASS" starttime="20190610 17:05:18.969" endtime="20190610 17:05:19.096"></status>
+<msg timestamp="20190611 12:44:09.692" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20190611 12:44:09.567" endtime="20190611 12:44:09.692"></status>
 </kw>
 <kw name="Set Suite Variable" library="BuiltIn">
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
@@ -524,10 +527,10 @@ given `alias`</doc>
 <arg>${response}</arg>
 <arg>${response}</arg>
 </arguments>
-<msg timestamp="20190610 17:05:19.096" level="INFO">${response} = &lt;Response [201]&gt;</msg>
-<status status="PASS" starttime="20190610 17:05:19.096" endtime="20190610 17:05:19.096"></status>
+<msg timestamp="20190611 12:44:09.693" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20190611 12:44:09.693" endtime="20190611 12:44:09.693"></status>
 </kw>
-<status status="PASS" starttime="20190610 17:05:18.968" endtime="20190610 17:05:19.096"></status>
+<status status="PASS" starttime="20190611 12:44:09.565" endtime="20190611 12:44:09.693"></status>
 </kw>
 <kw name="Validate and log response">
 <kw name="Log" library="BuiltIn">
@@ -535,8 +538,8 @@ given `alias`</doc>
 <arguments>
 <arg>${response.content}</arg>
 </arguments>
-<msg timestamp="20190610 17:05:19.097" level="INFO">{"id":"897","createdAt":"2019-06-10T14:05:19.093Z"}</msg>
-<status status="PASS" starttime="20190610 17:05:19.097" endtime="20190610 17:05:19.097"></status>
+<msg timestamp="20190611 12:44:09.694" level="INFO">{"id":"418","createdAt":"2019-06-11T09:44:09.674Z"}</msg>
+<status status="PASS" starttime="20190611 12:44:09.694" endtime="20190611 12:44:09.694"></status>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <doc>Fails if objects are unequal after converting them to strings.</doc>
@@ -544,10 +547,10 @@ given `alias`</doc>
 <arg>${response.status_code}</arg>
 <arg>201</arg>
 </arguments>
-<msg timestamp="20190610 17:05:19.097" level="INFO">Argument types are:
+<msg timestamp="20190611 12:44:09.694" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;type 'unicode'&gt;</msg>
-<status status="PASS" starttime="20190610 17:05:19.097" endtime="20190610 17:05:19.097"></status>
+<status status="PASS" starttime="20190611 12:44:09.694" endtime="20190611 12:44:09.695"></status>
 </kw>
 <kw name="Should Contain" library="BuiltIn">
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
@@ -555,7 +558,7 @@ given `alias`</doc>
 <arg>${response.text}</arg>
 <arg>createdAt</arg>
 </arguments>
-<status status="PASS" starttime="20190610 17:05:19.097" endtime="20190610 17:05:19.098"></status>
+<status status="PASS" starttime="20190611 12:44:09.695" endtime="20190611 12:44:09.695"></status>
 </kw>
 <kw name="Should Contain" library="BuiltIn">
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
@@ -563,9 +566,9 @@ given `alias`</doc>
 <arg>${response.text}</arg>
 <arg>id</arg>
 </arguments>
-<status status="PASS" starttime="20190610 17:05:19.098" endtime="20190610 17:05:19.098"></status>
+<status status="PASS" starttime="20190611 12:44:09.695" endtime="20190611 12:44:09.695"></status>
 </kw>
-<status status="PASS" starttime="20190610 17:05:19.096" endtime="20190610 17:05:19.098"></status>
+<status status="PASS" starttime="20190611 12:44:09.694" endtime="20190611 12:44:09.695"></status>
 </kw>
 <kw name="Save response to file">
 <kw name="To Json" library="RequestsLibrary">
@@ -577,13 +580,13 @@ given `alias`</doc>
 <assign>
 <var>${pretty_printed_response}</var>
 </assign>
-<msg timestamp="20190610 17:05:19.099" level="INFO">To JSON using : content={"id":"897","createdAt":"2019-06-10T14:05:19.093Z"} </msg>
-<msg timestamp="20190610 17:05:19.099" level="INFO">To JSON using : pretty_print=True </msg>
-<msg timestamp="20190610 17:05:19.099" level="INFO">${pretty_printed_response} = {
-    "createdAt": "2019-06-10T14:05:19.093Z",
-    "id": "897"
+<msg timestamp="20190611 12:44:09.696" level="INFO">To JSON using : content={"id":"418","createdAt":"2019-06-11T09:44:09.674Z"} </msg>
+<msg timestamp="20190611 12:44:09.696" level="INFO">To JSON using : pretty_print=True </msg>
+<msg timestamp="20190611 12:44:09.696" level="INFO">${pretty_printed_response} = {
+    "createdAt": "2019-06-11T09:44:09.674Z",
+    "id": "418"
 }</msg>
-<status status="PASS" starttime="20190610 17:05:19.098" endtime="20190610 17:05:19.099"></status>
+<status status="PASS" starttime="20190611 12:44:09.696" endtime="20190611 12:44:09.696"></status>
 </kw>
 <kw name="Create Binary File" library="OperatingSystem">
 <doc>Creates a binary file with the given content.</doc>
@@ -591,28 +594,28 @@ given `alias`</doc>
 <arg>${RESPONSES_FOLDER}/${response_file}</arg>
 <arg>${pretty_printed_response}</arg>
 </arguments>
-<msg timestamp="20190610 17:05:19.100" level="INFO" html="yes">Created binary file '&lt;a href="file://C:\Users\ryynapet\git\Rest_API_Testing_using_Robot_Framework\Rest_API_Testing_using_Robot_Framework\REST_API_Testing\Responses\Post_response.json"&gt;C:\Users\ryynapet\git\Rest_API_Testing_using_Robot_Framework\Rest_API_Testing_using_Robot_Framework\REST_API_Testing\Responses\Post_response.json&lt;/a&gt;'.</msg>
-<status status="PASS" starttime="20190610 17:05:19.099" endtime="20190610 17:05:19.100"></status>
+<msg timestamp="20190611 12:44:09.698" level="INFO" html="yes">Created binary file '&lt;a href="file://C:\Users\ryynapet\git\Rest_API_Testing_using_Robot_Framework\Rest_API_Testing_using_Robot_Framework\REST_API_Testing\Responses\Post_response.json"&gt;C:\Users\ryynapet\git\Rest_API_Testing_using_Robot_Framework\Rest_API_Testing_using_Robot_Framework\REST_API_Testing\Responses\Post_response.json&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20190611 12:44:09.697" endtime="20190611 12:44:09.698"></status>
 </kw>
-<status status="PASS" starttime="20190610 17:05:19.098" endtime="20190610 17:05:19.100"></status>
+<status status="PASS" starttime="20190611 12:44:09.696" endtime="20190611 12:44:09.698"></status>
 </kw>
-<status status="PASS" starttime="20190610 17:05:18.967" endtime="20190610 17:05:19.100" critical="yes"></status>
+<status status="PASS" starttime="20190611 12:44:09.564" endtime="20190611 12:44:09.698" critical="yes"></status>
 </test>
-<status status="PASS" starttime="20190610 17:05:18.963" endtime="20190610 17:05:19.101"></status>
+<status status="PASS" starttime="20190611 12:44:09.557" endtime="20190611 12:44:09.700"></status>
 </suite>
 <suite id="s1-s6" name="Put request" source="C:\Users\ryynapet\git\Rest_API_Testing_using_Robot_Framework\Rest_API_Testing_using_Robot_Framework\REST_API_Testing\Tests\Put_request.robot">
 <test id="s1-s6-t1" name="Validate PUT request">
-<kw name="Create connection">
+<kw name="Create connection" library="Common_keywords" type="setup">
 <kw name="Create Session" library="RequestsLibrary">
 <doc>Create Session: create a HTTP session to a server</doc>
 <arguments>
 <arg>session</arg>
 <arg>${BASE_URL}</arg>
 </arguments>
-<msg timestamp="20190610 17:05:19.107" level="INFO">Creating Session using : alias=session, url=https://reqres.in, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20190610 17:05:19.107" endtime="20190610 17:05:19.108"></status>
+<msg timestamp="20190611 12:44:09.708" level="INFO">Creating Session using : alias=session, url=https://reqres.in, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20190611 12:44:09.708" endtime="20190611 12:44:09.709"></status>
 </kw>
-<status status="PASS" starttime="20190610 17:05:19.107" endtime="20190610 17:05:19.108"></status>
+<status status="PASS" starttime="20190611 12:44:09.708" endtime="20190611 12:44:09.709"></status>
 </kw>
 <kw name="Get and send request">
 <kw name="Get Binary File" library="OperatingSystem">
@@ -623,12 +626,12 @@ given `alias`</doc>
 <assign>
 <var>${request_body}</var>
 </assign>
-<msg timestamp="20190610 17:05:19.109" level="INFO" html="yes">Getting file '&lt;a href="file://C:\Users\ryynapet\git\Rest_API_Testing_using_Robot_Framework\Rest_API_Testing_using_Robot_Framework\REST_API_Testing\Requests\Put_request.json"&gt;C:\Users\ryynapet\git\Rest_API_Testing_using_Robot_Framework\Rest_API_Testing_using_Robot_Framework\REST_API_Testing\Requests\Put_request.json&lt;/a&gt;'.</msg>
-<msg timestamp="20190610 17:05:19.109" level="INFO">${request_body} = {
+<msg timestamp="20190611 12:44:09.710" level="INFO" html="yes">Getting file '&lt;a href="file://C:\Users\ryynapet\git\Rest_API_Testing_using_Robot_Framework\Rest_API_Testing_using_Robot_Framework\REST_API_Testing\Requests\Put_request.json"&gt;C:\Users\ryynapet\git\Rest_API_Testing_using_Robot_Framework\Rest_API_Testing_using_Robot_Framework\REST_API_Testing\Requests\Put_request.json&lt;/a&gt;'.</msg>
+<msg timestamp="20190611 12:44:09.710" level="INFO">${request_body} = {
     "name": "morpheus",
     "job": "zion resident"
 }</msg>
-<status status="PASS" starttime="20190610 17:05:19.109" endtime="20190610 17:05:19.109"></status>
+<status status="PASS" starttime="20190611 12:44:09.709" endtime="20190611 12:44:09.710"></status>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
@@ -638,8 +641,8 @@ given `alias`</doc>
 <assign>
 <var>&amp;{header}</var>
 </assign>
-<msg timestamp="20190610 17:05:19.110" level="INFO">&amp;{header} = { Content-Type=application/json }</msg>
-<status status="PASS" starttime="20190610 17:05:19.110" endtime="20190610 17:05:19.110"></status>
+<msg timestamp="20190611 12:44:09.711" level="INFO">&amp;{header} = { Content-Type=application/json }</msg>
+<status status="PASS" starttime="20190611 12:44:09.710" endtime="20190611 12:44:09.711"></status>
 </kw>
 <kw name="Put Request" library="RequestsLibrary">
 <doc>Send a PUT request on the session object found using the
@@ -652,14 +655,14 @@ given `alias`</doc>
 <assign>
 <var>${response}</var>
 </assign>
-<msg timestamp="20190610 17:05:19.251" level="INFO">Put Request using : alias=session, uri=/api/users/2, data={
+<msg timestamp="20190611 12:44:09.841" level="INFO">Put Request using : alias=session, uri=/api/users/2, data={
     "name": "morpheus",
     "job": "zion resident"
 },                     headers=None, allow_redirects=True </msg>
-<msg timestamp="20190610 17:05:19.252" level="INFO">c:\users\ryynapet\appdata\local\programs\python\python37-32\lib\site-packages\urllib3\connectionpool.py:847: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+<msg timestamp="20190611 12:44:09.841" level="INFO">c:\users\ryynapet\appdata\local\programs\python\python37-32\lib\site-packages\urllib3\connectionpool.py:847: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
   InsecureRequestWarning)</msg>
-<msg timestamp="20190610 17:05:19.253" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20190610 17:05:19.110" endtime="20190610 17:05:19.253"></status>
+<msg timestamp="20190611 12:44:09.844" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20190611 12:44:09.711" endtime="20190611 12:44:09.844"></status>
 </kw>
 <kw name="Set Suite Variable" library="BuiltIn">
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
@@ -667,10 +670,10 @@ given `alias`</doc>
 <arg>${response}</arg>
 <arg>${response}</arg>
 </arguments>
-<msg timestamp="20190610 17:05:19.255" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20190610 17:05:19.254" endtime="20190610 17:05:19.255"></status>
+<msg timestamp="20190611 12:44:09.844" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20190611 12:44:09.844" endtime="20190611 12:44:09.844"></status>
 </kw>
-<status status="PASS" starttime="20190610 17:05:19.109" endtime="20190610 17:05:19.256"></status>
+<status status="PASS" starttime="20190611 12:44:09.709" endtime="20190611 12:44:09.844"></status>
 </kw>
 <kw name="Validate and log response">
 <kw name="Log" library="BuiltIn">
@@ -678,8 +681,8 @@ given `alias`</doc>
 <arguments>
 <arg>${response.content}</arg>
 </arguments>
-<msg timestamp="20190610 17:05:19.259" level="INFO">{"updatedAt":"2019-06-10T14:05:19.242Z"}</msg>
-<status status="PASS" starttime="20190610 17:05:19.258" endtime="20190610 17:05:19.259"></status>
+<msg timestamp="20190611 12:44:09.845" level="INFO">{"updatedAt":"2019-06-11T09:44:09.823Z"}</msg>
+<status status="PASS" starttime="20190611 12:44:09.845" endtime="20190611 12:44:09.845"></status>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <doc>Fails if objects are unequal after converting them to strings.</doc>
@@ -687,10 +690,10 @@ given `alias`</doc>
 <arg>${response.status_code}</arg>
 <arg>200</arg>
 </arguments>
-<msg timestamp="20190610 17:05:19.261" level="INFO">Argument types are:
+<msg timestamp="20190611 12:44:09.845" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;type 'unicode'&gt;</msg>
-<status status="PASS" starttime="20190610 17:05:19.260" endtime="20190610 17:05:19.261"></status>
+<status status="PASS" starttime="20190611 12:44:09.845" endtime="20190611 12:44:09.845"></status>
 </kw>
 <kw name="Should Contain" library="BuiltIn">
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
@@ -698,9 +701,9 @@ given `alias`</doc>
 <arg>${response.text}</arg>
 <arg>updatedAt</arg>
 </arguments>
-<status status="PASS" starttime="20190610 17:05:19.261" endtime="20190610 17:05:19.262"></status>
+<status status="PASS" starttime="20190611 12:44:09.845" endtime="20190611 12:44:09.846"></status>
 </kw>
-<status status="PASS" starttime="20190610 17:05:19.257" endtime="20190610 17:05:19.262"></status>
+<status status="PASS" starttime="20190611 12:44:09.844" endtime="20190611 12:44:09.846"></status>
 </kw>
 <kw name="Save response to file">
 <kw name="To Json" library="RequestsLibrary">
@@ -712,12 +715,12 @@ given `alias`</doc>
 <assign>
 <var>${pretty_printed_response}</var>
 </assign>
-<msg timestamp="20190610 17:05:19.264" level="INFO">To JSON using : content={"updatedAt":"2019-06-10T14:05:19.242Z"} </msg>
-<msg timestamp="20190610 17:05:19.264" level="INFO">To JSON using : pretty_print=True </msg>
-<msg timestamp="20190610 17:05:19.264" level="INFO">${pretty_printed_response} = {
-    "updatedAt": "2019-06-10T14:05:19.242Z"
+<msg timestamp="20190611 12:44:09.847" level="INFO">To JSON using : content={"updatedAt":"2019-06-11T09:44:09.823Z"} </msg>
+<msg timestamp="20190611 12:44:09.847" level="INFO">To JSON using : pretty_print=True </msg>
+<msg timestamp="20190611 12:44:09.847" level="INFO">${pretty_printed_response} = {
+    "updatedAt": "2019-06-11T09:44:09.823Z"
 }</msg>
-<status status="PASS" starttime="20190610 17:05:19.263" endtime="20190610 17:05:19.264"></status>
+<status status="PASS" starttime="20190611 12:44:09.846" endtime="20190611 12:44:09.847"></status>
 </kw>
 <kw name="Create Binary File" library="OperatingSystem">
 <doc>Creates a binary file with the given content.</doc>
@@ -725,16 +728,16 @@ given `alias`</doc>
 <arg>${response_folder}/Put_response.json</arg>
 <arg>${pretty_printed_response}</arg>
 </arguments>
-<msg timestamp="20190610 17:05:19.265" level="INFO" html="yes">Created binary file '&lt;a href="file://C:\Users\ryynapet\git\Rest_API_Testing_using_Robot_Framework\Rest_API_Testing_using_Robot_Framework\REST_API_Testing\Response\Put_response.json"&gt;C:\Users\ryynapet\git\Rest_API_Testing_using_Robot_Framework\Rest_API_Testing_using_Robot_Framework\REST_API_Testing\Response\Put_response.json&lt;/a&gt;'.</msg>
-<status status="PASS" starttime="20190610 17:05:19.264" endtime="20190610 17:05:19.265"></status>
+<msg timestamp="20190611 12:44:09.848" level="INFO" html="yes">Created binary file '&lt;a href="file://C:\Users\ryynapet\git\Rest_API_Testing_using_Robot_Framework\Rest_API_Testing_using_Robot_Framework\REST_API_Testing\Response\Put_response.json"&gt;C:\Users\ryynapet\git\Rest_API_Testing_using_Robot_Framework\Rest_API_Testing_using_Robot_Framework\REST_API_Testing\Response\Put_response.json&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20190611 12:44:09.847" endtime="20190611 12:44:09.848"></status>
 </kw>
-<status status="PASS" starttime="20190610 17:05:19.263" endtime="20190610 17:05:19.265"></status>
+<status status="PASS" starttime="20190611 12:44:09.846" endtime="20190611 12:44:09.848"></status>
 </kw>
-<status status="PASS" starttime="20190610 17:05:19.106" endtime="20190610 17:05:19.265" critical="yes"></status>
+<status status="PASS" starttime="20190611 12:44:09.708" endtime="20190611 12:44:09.848" critical="yes"></status>
 </test>
-<status status="PASS" starttime="20190610 17:05:19.103" endtime="20190610 17:05:19.266"></status>
+<status status="PASS" starttime="20190611 12:44:09.702" endtime="20190611 12:44:09.849"></status>
 </suite>
-<status status="PASS" starttime="20190610 17:05:18.220" endtime="20190610 17:05:19.267"></status>
+<status status="PASS" starttime="20190611 12:44:08.806" endtime="20190611 12:44:09.850"></status>
 </suite>
 <statistics>
 <total>

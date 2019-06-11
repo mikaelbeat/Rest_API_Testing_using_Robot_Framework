@@ -5,6 +5,8 @@ Library    DiffLibrary
 Library    JSONLibrary
 Library    Collections
 Resource    ../Resources/Common_variables.robot    
+Resource    ../Resources/Common_keywords.robot
+Test Setup    Create connection
 
 
 *** Variables ***
@@ -13,9 +15,6 @@ ${expectes_last_name}    Holt
 
 
 *** Keywords ***
-Create connection
-    Create Session    session    ${BASE_URL} 
-    
 Send request and log response
     ${response}    Get Request    session    ${GET_USERS_URI}
     Log    ${response.status_code}
@@ -32,11 +31,7 @@ Validate response
     Should Be Equal    ${lastname}    ${expectes_last_name} 
 
 
-
 *** Test Cases ***
 Validate GET Request for specific person
-    Create connection
     Send request and log response
     Validate response
-
-                           

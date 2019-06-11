@@ -3,11 +3,12 @@ Library    RequestsLibrary
 Library    JSONLibrary    
 Library    Collections    
 Resource    ../Resources/Common_variables.robot
+Resource    ../Resources/Common_keywords.robot
+Test Setup    Create connection
 
 
 *** Test Cases ***
 Validate get request with parameters
-    Create Session    session    ${BASE_URL}
     &{parameters}    Create Dictionary    value=2
     ${response}    Get Request    session    /api/users    ${parameters}
     Log    ${response.content}

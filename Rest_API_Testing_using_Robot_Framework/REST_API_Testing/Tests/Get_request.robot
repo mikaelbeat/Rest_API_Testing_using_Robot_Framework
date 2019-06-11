@@ -3,6 +3,8 @@ Library    RequestsLibrary
 Library    OperatingSystem    
 Library    DiffLibrary
 Resource    ../Resources/Common_variables.robot
+Resource    ../Resources/Common_keywords.robot
+Test Setup    Create connection
 
 
 *** Variables ***
@@ -11,9 +13,6 @@ ${expected_file}    expected_response.json
 
 
 *** Keywords ***
-Create connection
-    Create Session    session    ${BASE_URL} 
-    
 Send request and validate status code
     ${response}    Get Request    session    ${GET_USERS_URI}
     Log    ${response.status_code}
@@ -33,7 +32,6 @@ Validate response
 
 *** Test Cases ***
 Validate GET Request
-    Create connection
     Send request and validate status code
     Save response to file
     Validate response
