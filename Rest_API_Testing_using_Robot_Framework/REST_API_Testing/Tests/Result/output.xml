@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.1 (Python 3.7.2 on win32)" generated="20190628 11:43:33.130" rpa="false">
+<suite id="s1" name="Get request" source="D:\Git\github\Rest_API_Testing_using_Robot_Framework\Rest_API_Testing_using_Robot_Framework\REST_API_Testing\Tests\Get_request.robot">
+<test id="s1-t1" name="Validate GET Request">
+<kw name="Create connection" library="Common_keywords" type="setup">
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>session</arg>
+<arg>${BASE_URL}</arg>
+</arguments>
+<msg timestamp="20190628 11:43:33.387" level="INFO">Creating Session using : alias=session, url=https://reqres.in, headers={},                     cookies=None, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20190628 11:43:33.387" endtime="20190628 11:43:33.387"></status>
+</kw>
+<status status="PASS" starttime="20190628 11:43:33.387" endtime="20190628 11:43:33.388"></status>
+</kw>
+<kw name="Send request and validate status code">
+<kw name="Get Request" library="RequestsLibrary">
+<doc>Send a GET request on the session object found using the
+given `alias`</doc>
+<arguments>
+<arg>session</arg>
+<arg>${GET_USERS_URI}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20190628 11:43:33.601" level="INFO">Get Request using : alias=session, uri=/api/users?page=2, headers=None json=None</msg>
+<msg timestamp="20190628 11:43:33.601" level="INFO">c:\users\mikaelbeat\appdata\local\programs\python\python37-32\lib\site-packages\urllib3\connectionpool.py:847: InsecureRequestWarning: Unverified HTTPS request is being made. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  InsecureRequestWarning)</msg>
+<msg timestamp="20190628 11:43:33.601" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20190628 11:43:33.388" endtime="20190628 11:43:33.601"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${response.status_code}</arg>
+</arguments>
+<msg timestamp="20190628 11:43:33.601" level="INFO">200</msg>
+<status status="PASS" starttime="20190628 11:43:33.601" endtime="20190628 11:43:33.601"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${response.content}</arg>
+</arguments>
+<msg timestamp="20190628 11:43:33.602" level="INFO">{"page":2,"per_page":3,"total":12,"total_pages":4,"data":[{"id":4,"email":"eve.holt@reqres.in","first_name":"Eve","last_name":"Holt","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg"},{"id":5,"email":"charles.morris@reqres.in","first_name":"Charles","last_name":"Morris","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"},{"id":6,"email":"tracey.ramos@reqres.in","first_name":"Tracey","last_name":"Ramos","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"}]}</msg>
+<status status="PASS" starttime="20190628 11:43:33.601" endtime="20190628 11:43:33.602"></status>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<arguments>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+</arguments>
+<msg timestamp="20190628 11:43:33.602" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20190628 11:43:33.602" endtime="20190628 11:43:33.602"></status>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<arguments>
+<arg>${response}</arg>
+<arg>${response}</arg>
+</arguments>
+<msg timestamp="20190628 11:43:33.602" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20190628 11:43:33.602" endtime="20190628 11:43:33.602"></status>
+</kw>
+<status status="PASS" starttime="20190628 11:43:33.388" endtime="20190628 11:43:33.602"></status>
+</kw>
+<kw name="Save response to file">
+<kw name="To Json" library="RequestsLibrary">
+<doc>Convert a string to a JSON object</doc>
+<arguments>
+<arg>${response.text}</arg>
+<arg>true</arg>
+</arguments>
+<assign>
+<var>${pretty_printed_response}</var>
+</assign>
+<msg timestamp="20190628 11:43:33.603" level="INFO">To JSON using : content={"page":2,"per_page":3,"total":12,"total_pages":4,"data":[{"id":4,"email":"eve.holt@reqres.in","first_name":"Eve","last_name":"Holt","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg"},{"id":5,"email":"charles.morris@reqres.in","first_name":"Charles","last_name":"Morris","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"},{"id":6,"email":"tracey.ramos@reqres.in","first_name":"Tracey","last_name":"Ramos","avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"}]} </msg>
+<msg timestamp="20190628 11:43:33.603" level="INFO">To JSON using : pretty_print=True </msg>
+<msg timestamp="20190628 11:43:33.603" level="INFO">${pretty_printed_response} = {
+    "data": [
+        {
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg",
+            "email": "eve.holt@reqres.in",
+            "first_name": "Eve",
+     ...</msg>
+<status status="PASS" starttime="20190628 11:43:33.603" endtime="20190628 11:43:33.604"></status>
+</kw>
+<kw name="Create Binary File" library="OperatingSystem">
+<doc>Creates a binary file with the given content.</doc>
+<arguments>
+<arg>${RESPONSES_FOLDER}/${response_file}</arg>
+<arg>${pretty_printed_response}</arg>
+</arguments>
+<msg timestamp="20190628 11:43:33.605" level="INFO" html="yes">Created binary file '&lt;a href="file://D:\Git\github\Rest_API_Testing_using_Robot_Framework\Rest_API_Testing_using_Robot_Framework\REST_API_Testing\Tests\Responses\get_response.json"&gt;D:\Git\github\Rest_API_Testing_using_Robot_Framework\Rest_API_Testing_using_Robot_Framework\REST_API_Testing\Tests\Responses\get_response.json&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20190628 11:43:33.604" endtime="20190628 11:43:33.605"></status>
+</kw>
+<status status="PASS" starttime="20190628 11:43:33.603" endtime="20190628 11:43:33.605"></status>
+</kw>
+<kw name="Validate response">
+<kw name="Get File" library="OperatingSystem">
+<doc>Returns the contents of a specified file.</doc>
+<arguments>
+<arg>${RESPONSES_FOLDER}/${response_file}</arg>
+<arg>encoding=UTF-8</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20190628 11:43:33.606" level="INFO" html="yes">Getting file '&lt;a href="file://D:\Git\github\Rest_API_Testing_using_Robot_Framework\Rest_API_Testing_using_Robot_Framework\REST_API_Testing\Tests\Responses\get_response.json"&gt;D:\Git\github\Rest_API_Testing_using_Robot_Framework\Rest_API_Testing_using_Robot_Framework\REST_API_Testing\Tests\Responses\get_response.json&lt;/a&gt;'.</msg>
+<msg timestamp="20190628 11:43:33.606" level="INFO">${response} = {
+    "data": [
+        {
+            "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg",
+            "email": "eve.holt@reqres.in",
+            "first_name": "Eve",
+     ...</msg>
+<status status="PASS" starttime="20190628 11:43:33.605" endtime="20190628 11:43:33.606"></status>
+</kw>
+<kw name="Get File" library="OperatingSystem">
+<doc>Returns the contents of a specified file.</doc>
+<arguments>
+<arg>${EXPECTED_FOLDER}/${expected_file}</arg>
+<arg>encoding=UTF-8</arg>
+</arguments>
+<assign>
+<var>${expected}</var>
+</assign>
+<msg timestamp="20190628 11:43:33.606" level="INFO" html="yes">Getting file '&lt;a href="file://D:\Git\github\Rest_API_Testing_using_Robot_Framework\Rest_API_Testing_using_Robot_Framework\REST_API_Testing\Tests\Expected\expected_response.json"&gt;D:\Git\github\Rest_API_Testing_using_Robot_Framework\Rest_API_Testing_using_Robot_Framework\REST_API_Testing\Tests\Expected\expected_response.json&lt;/a&gt;'.</msg>
+<msg timestamp="20190628 11:43:33.607" level="FAIL">FileNotFoundError: [Errno 2] No such file or directory: 'D:\\Git\\github\\Rest_API_Testing_using_Robot_Framework\\Rest_API_Testing_using_Robot_Framework\\REST_API_Testing\\Tests\\Expected\\expected_response.json'</msg>
+<status status="FAIL" starttime="20190628 11:43:33.606" endtime="20190628 11:43:33.607"></status>
+</kw>
+<status status="FAIL" starttime="20190628 11:43:33.605" endtime="20190628 11:43:33.607"></status>
+</kw>
+<status status="FAIL" starttime="20190628 11:43:33.387" endtime="20190628 11:43:33.607" critical="yes">FileNotFoundError: [Errno 2] No such file or directory: 'D:\\Git\\github\\Rest_API_Testing_using_Robot_Framework\\Rest_API_Testing_using_Robot_Framework\\REST_API_Testing\\Tests\\Expected\\expected_response.json'</status>
+</test>
+<status status="FAIL" starttime="20190628 11:43:33.131" endtime="20190628 11:43:33.608"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1">Critical Tests</stat>
+<stat pass="0" fail="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" id="s1" name="Get request">Get request</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
